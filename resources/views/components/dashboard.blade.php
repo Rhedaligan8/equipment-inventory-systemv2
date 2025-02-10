@@ -1,3 +1,4 @@
 <x-layouts.app>
-    <h1>this is dashboard</h1>
+    <livewire:header />
+    <h1>{{Auth::user()->name}}</h1>
 </x-layouts.app>

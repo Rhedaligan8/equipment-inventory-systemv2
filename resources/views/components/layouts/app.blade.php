@@ -8,6 +8,7 @@
     <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <title>ICT EQUIPMENT INVENTORY</title>
     @livewireStyles
 </head>

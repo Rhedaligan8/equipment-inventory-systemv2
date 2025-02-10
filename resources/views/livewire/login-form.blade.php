@@ -1,21 +1,21 @@
 <div class="flex flex-col p-4 overflow-y-auto size-full">
     <div class="max-w-[500px] my-auto w-full mx-auto relative">
 
-        <div class="absolute z-0 top-0 left-0 size-full hidden sm:block">
+        <div class="absolute top-0 left-0 z-0 hidden size-full sm:block">
             <div class="relative size-full">
                 <x-bladewind::icon name="computer-desktop"
-                    class="!w-32 !h-32 text-zinc-300 absolute -top-8 -left-8 rotate-6" />
+                    class="!w-32 !h-32 text-zinc-300 absolute -top-8 -left-8 animate-floatRotateLeft" />
                 <x-bladewind::icon name="printer"
-                    class="!w-32 !h-32 text-zinc-300 absolute -bottom-12 -left-12 -rotate-6" />
+                    class="!w-32 !h-32 text-zinc-300 absolute bottom-2 -left-16 -rotate-6 animate-floatRotateRight" />
                 <x-bladewind::icon name="wrench-screwdriver"
-                    class="!w-32 !h-32 text-zinc-300 absolute  -top-8 right-12 -rotate-6" />
+                    class="!w-32 !h-32 text-zinc-300 absolute  -top-8 right-12 -rotate-6 animate-floatRotateRight" />
                 <x-bladewind::icon name="cpu-chip"
-                    class="!w-32 !h-32 text-zinc-300 absolute -bottom-12 -right-12 rotate-6" />
+                    class="!w-32 !h-32 text-zinc-300 absolute -bottom-12 -right-12 rotate-6 animate-floatRotateRight" />
             </div>
         </div>
 
         <div
-            class="backdrop-blur-md relative z-10 p-8 border shadow-xl  bg-gradient-to-b from-blue-400/20 from-30% to-white/10 to-50%  rounded-lg">
+            class="backdrop-blur-sm relative z-10 p-8 border shadow-xl  bg-gradient-to-b from-blue-400/20 from-30% to-white/10 to-50%  rounded-lg">
             <div class="flex flex-col items-center gap-2 mb-8">
                 <x-pnri-logo class="size-20" />
                 <h1 class="text-2xl font-bold text-center text-zinc-900">ICT EQUIPMENT INVENTORY</h1>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +23,6 @@ Route::group(["middleware" => "auth"], function () {
     Route::get('dashboard', function () {
         return view('components/dashboard');
     });
+
+    Route::post("logout", [UserController::class, "logout"])->name("logout");
 });
