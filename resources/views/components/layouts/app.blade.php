@@ -13,8 +13,12 @@
     @livewireStyles
 </head>
 
-<body class="h-screen overflow-hidden antialiased bg-zinc-100">
-    <main class="size-full">
+<body class="flex flex-col h-screen antialiased bg-zinc-100">
+    @if (isset($header))
+        {{$header}}
+    @endif
+
+    <main class="flex-grow">
         {{$slot}}
     </main>
     @livewireScripts
