@@ -50,7 +50,10 @@ class LoginForm extends Component
             return;
         } else {
             Auth::login($user);
-            Log::create("User logged in.");
+
+            $log = new Log(['description' => "User logged in."]);
+            $savedLog = Auth::user()->logs()->save($log);
+            // update: put alert if the saved log fails
             redirect()->intended("dashboard");
         }
 

@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+/* Resize scrollbar width */
+::-webkit-scrollbar {
+    width: 8px; /* Change scrollbar width */
+    height: 8px; /* Change scrollbar height (horizontal scrollbars) */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+    background: #60a5fa;
+    border-radius: 10px;
+}
+
+/* Hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: #3b82f6;
+}   

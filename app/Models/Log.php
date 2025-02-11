@@ -6,18 +6,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class Log extends Model
 {
     use HasFactory;
 
-    public function create($description)
+
+    protected $fillable = ['description'];
+    public $timestamps = false;
+
+    protected $casts = [
+        'created_at' => 'datetime',
+    ];
+
+
+    public function user()
     {
-        if (Auth::check()) {
-            DB::table("logs")->insert([
-                "user_id" => Auth::id(),
-                "description" => $description
-            ]);
-        }
+        return $this->belongsTo(User::class);
     }
+
+
 }
