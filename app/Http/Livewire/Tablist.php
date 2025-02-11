@@ -8,10 +8,11 @@ class Tablist extends Component
 {
 
     public $menuTabs = [
-        "Items",
-        "Equipment Type",
-        "Person Accountable",
-        "Division And Sections"
+        ['tabName' => 'Items', 'tabIcon' => 'clipboard-document-list'],
+        ['tabName' => 'Equipment Type', 'tabIcon' => 'computer-desktop'],
+        ['tabName' => 'Person Accountable', 'tabIcon' => 'user'],
+        ['tabName' => 'Division And Sections', 'tabIcon' => 'building-office-2'],
+        ['tabName' => 'Users', 'tabIcon' => 'user-group']
     ];
 
 

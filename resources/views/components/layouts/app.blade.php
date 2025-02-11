@@ -13,7 +13,7 @@
     @livewireStyles
 </head>
 
-<body class="flex flex-col h-screen antialiased bg-zinc-100 ">
+<body class="flex flex-col h-screen antialiased bg-zinc-100 text-zinc-900">
     @if (isset($header))
         {{$header}}
     @endif
