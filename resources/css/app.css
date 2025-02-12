@@ -26,3 +26,7 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #3b82f6;
 }   
+
+[x-cloak] {
+    display: none !important;
+}
