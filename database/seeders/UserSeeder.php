@@ -18,12 +18,17 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            "name" => "Mike Bacabis",
-            "username" => "admin",
-            "password" => Hash::make("admin"),
-            "role" => "admin",
-            "status" => "active"
-        ]);
+        // User::create([
+        //     "name" => "Mike Bacabis",
+        //     "username" => "admin",
+        //     "password" => Hash::make("admin"),
+        //     "role" => "admin",
+        //     "status" => "active"
+        // ]);
+
+        User::factory()
+            ->count(10)
+            ->hasLogs(2)
+            ->create();
     }
 }

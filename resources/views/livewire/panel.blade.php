@@ -1,4 +1,4 @@
-<div class="h-full rounded-lg shadow-lg bg-zinc-100/50 backdrop-blur-lg grow">
+<div class="h-full overflow-y-auto rounded-lg shadow-lg bg-zinc-100/50 backdrop-blur-lg grow">
     <div x-cloak :class="selectedMenu === 'items' ? 'block' : 'hidden'">
         item panel
     </div>

@@ -9,20 +9,36 @@ class UsersPanel extends Component
 {
 
     public $users;
-
-    public $action_icons = [
-        "icon:chat | tip:send message | color:green | click:sendMessage('{w}')",
-        "icon:pencil | click:redirect('/user/{id}')",
-        "icon:trash | color:red | click:deleteUser({id}, '{w}')",
-    ];
+    public $searchString = "";
 
     public function mount()
     {
-        $this->users = User::all();
+        $this->getUsers();
     }
 
     public function render()
     {
         return view('livewire.users-panel');
+    }
+
+    public function getUsers(): void
+    {
+        $this->users = User::where(['name', 'like', '%{{$searchString}}%'])
+            ->orWhere(['username', 'like', '%{{$searchString}}%'])
+            ->orWhere(['role', 'like', '%{{$searchString}}%'])
+            ->orWhere(['status', 'like', '%{{$searchString}}%'])
+            ->orWhere(['created_at', 'like', '%{{$searchString}}%'])
+            ->orWhere(['updated_at', 'like', '%{{$searchString}}%'])->get();
+    }
+
+    public function searchFilter()
+    {
+        $this->getUsers();
+    }
+
+    public function clearSearchString()
+    {
+        $this->searchString = "";
+        $this->getUsers();
     }
 }
