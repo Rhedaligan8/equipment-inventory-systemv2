@@ -30,6 +30,7 @@ class UsersPanel extends Component
             $log = new Log(['description' => "Removed (Name: $user->name, Username: $user->username, Role: $user->role) from the database."]);
             Auth::user()->logs()->save($log);
             $this->totalUsers = User::count();
+            $this->dispatchBrowserEvent('showNotification', ['title' => 'Delete Successful', 'message' => 'User was deleted successfully', 'type' => 'success']);
         }
 
     }
@@ -52,7 +53,7 @@ class UsersPanel extends Component
 
     public function updatedItemPerPage()
     {
-        $this->resetPage();
+        $this->refreshTable();
     }
 
     public function render()

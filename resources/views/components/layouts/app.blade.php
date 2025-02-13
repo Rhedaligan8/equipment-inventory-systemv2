@@ -14,6 +14,7 @@
 </head>
 
 <body class="flex flex-col h-screen antialiased bg-zinc-100 text-zinc-900">
+    <x-bladewind::notification />
     @if (isset($header))
         {{$header}}
     @endif
@@ -23,5 +24,16 @@
     </main>
     @livewireScripts
 </body>
+
+<script>
+    window.addEventListener('showNotification', function (event) {
+        showNotification(event.detail.title,
+            event.detail.message,
+            event.detail.type,
+            2,
+            'regular',
+            'same_one');
+    });
+</script>
 
 </html>

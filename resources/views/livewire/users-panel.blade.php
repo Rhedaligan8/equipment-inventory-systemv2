@@ -1,4 +1,9 @@
 <div class="flex flex-col h-full gap-4 p-8">
+    <div wire:loading class="absolute top-0 left-0 z-50 bg-zinc-900/30 size-full">
+        <div class="flex items-center justify-center h-full">
+            <x-bladewind::spinner size="omg" color="blue" />
+        </div>
+    </div>
     <form wire:submit.prevent="searchFilter" class="flex gap-4">
         <x-bladewind::input focused placeholder="Search..." wire:model.defer="searchString" add_clearing="false"
             size="regular" />
@@ -76,7 +81,7 @@
                             <div class="flex justify-end gap-2 mt-4">
                                 <x-bladewind::button size="tiny"
                                     onclick="hideModal('delete-user-{{$user->id }}')">Cancel</x-bladewind::button>
-                                <x-bladewind::button color="red" size="tiny"
+                                <x-bladewind::button wire:loading.attr="disabled" color="red" size="tiny"
                                     wire:click="deleteUser({{$user->id}})">Delete</x-bladewind::button>
                             </div>
                         </x-bladewind::modal>
