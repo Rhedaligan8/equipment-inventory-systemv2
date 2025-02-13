@@ -311,6 +311,8 @@ const showModal = (element) => {
     });
 };
 
+
+
 /**
  * Trap focus within an open modal to prevent scrolling behind the modal.
  * @param {Event} event - The event object.
