@@ -14,14 +14,14 @@
     @livewireStyles
 </head>
 
-<body class="flex flex-col h-screen antialiased bg-zinc-100 text-zinc-900">
+<body class="flex flex-col h-screen antialiased bg-[#F5F5DC]-100 text-zinc-900">
     <x-bladewind::notification />
     @if (isset($header))
         {{$header}}
     @endif
 
     <main class="flex-grow overflow-hidden">
-        {{$slot}}
+        {{$slot}}s
     </main>
     @livewireScripts
 </body>
