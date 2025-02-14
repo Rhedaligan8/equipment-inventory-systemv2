@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ asset('images/pnri-logo.ico') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('vendor/bladewind/css/animate.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" />
