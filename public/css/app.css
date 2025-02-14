@@ -541,6 +541,9 @@ video {
 .z-50 {
   z-index: 50;
 }
+.-z-0 {
+  z-index: 0;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -587,10 +590,6 @@ video {
 .size-full {
   width: 100%;
   height: 100%;
-}
-.size-0 {
-  width: 0px;
-  height: 0px;
 }
 .\!h-32 {
   height: 8rem !important;
@@ -694,9 +693,6 @@ video {
 .items-center {
   align-items: center;
 }
-.justify-normal {
-  justify-content: normal;
-}
 .justify-end {
   justify-content: flex-end;
 }
@@ -773,22 +769,12 @@ video {
 .bg-zinc-100\/50 {
   background-color: rgb(244 244 245 / 0.5);
 }
+.bg-zinc-900\/30 {
+  background-color: rgb(24 24 27 / 0.3);
+}
 .bg-red-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity, 1));
-}
-.bg-zinc-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(24 24 27 / var(--tw-bg-opacity, 1));
-}
-.bg-zinc-900\/20 {
-  background-color: rgb(24 24 27 / 0.2);
-}
-.bg-zinc-900\/10 {
-  background-color: rgb(24 24 27 / 0.1);
-}
-.bg-zinc-900\/30 {
-  background-color: rgb(24 24 27 / 0.3);
 }
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));

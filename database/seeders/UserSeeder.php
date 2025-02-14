@@ -27,8 +27,8 @@ class UserSeeder extends Seeder
         // ]);
 
         User::factory()
-            ->count(10)
-            ->hasLogs(2)
+            ->count(50)
+            ->hasLogs(0)
             ->create();
     }
 }

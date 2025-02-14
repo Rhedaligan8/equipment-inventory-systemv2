@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\User;
 use App\Models\Log;
 use Livewire\WithPagination;
+use Illuminate\Pagination\CursorPaginator;
 
 class UsersPanel extends Component
 {
@@ -32,7 +33,6 @@ class UsersPanel extends Component
             $this->totalUsers = User::count();
             $this->dispatchBrowserEvent('showNotification', ['title' => 'Delete Successful', 'message' => 'User was deleted successfully', 'type' => 'success']);
         }
-
     }
 
     public function setOrderBy($field)
@@ -60,12 +60,12 @@ class UsersPanel extends Component
     {
         return view('livewire.users-panel', [
             'users' => User::where(function ($query) {
-                $query->where('name', 'like', '%' . $this->searchString . '%')
-                    ->orWhere('username', 'like', '%' . $this->searchString . '%')
-                    ->orWhere('role', 'like', '%' . $this->searchString . '%')
-                    ->orWhere('status', 'like', '%' . $this->searchString . '%')
-                    ->orWhere('created_at', 'like', '%' . $this->searchString . '%')
-                    ->orWhere('updated_at', 'like', '%' . $this->searchString . '%');
+                $query->where('name', 'like', $this->searchString . '%')
+                    ->orWhere('username', 'like', $this->searchString . '%')
+                    ->orWhere('role', 'like', $this->searchString . '%')
+                    ->orWhere('status', 'like', $this->searchString . '%')
+                    ->orWhere('created_at', 'like', $this->searchString . '%')
+                    ->orWhere('updated_at', 'like', $this->searchString . '%');
             })->orderBy($this->orderByString, $this->orderBySort)->paginate($this->itemPerPage)
         ]);
     }
@@ -77,7 +77,6 @@ class UsersPanel extends Component
 
     public function searchFilter()
     {
-        $this->resetPage();
         $this->refreshTable();
     }
 

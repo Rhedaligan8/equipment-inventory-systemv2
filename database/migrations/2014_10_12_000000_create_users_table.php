@@ -20,6 +20,12 @@ return new class extends Migration {
             $table->enum("role", ["admin", "staff"]);
             $table->enum("status", ["active", "inactive"])->default("active");
             $table->timestamps();
+            $table->index('name');
+            $table->index('username');
+            $table->index('role');
+            $table->index('status');
+            $table->index('created_at');
+            $table->index('updated_at');
         });
     }
 

@@ -8,7 +8,6 @@
         <x-bladewind::input focused placeholder="Search..." wire:model.defer="searchString" add_clearing="false"
             size="regular" />
         <x-bladewind::button wire:click="clearSearchString()">Clear</x-bladewind::button>
-
     </form>
     <div class="overflow-y-auto grow">
         <x-bladewind::table has_border="true" divider="thin">
@@ -66,7 +65,7 @@
                             <td>{{$user->updated_at}}</td>
                             <td>
                                 <div class="flex gap-2 ">
-                                    <x-bladewind::button size="tiny">
+                                    <x-bladewind::button size="tiny" onclick="showModal('edit-user')">
                                         <x-bladewind::icon class="!h-4 !w-4" name="pencil" />
                                     </x-bladewind::button>
                                     <x-bladewind::button size="tiny" color="red" onclick="showModal('delete-user-{{$user->id }}')">
@@ -75,7 +74,7 @@
                                 </div>
                             </td>
                         </tr>
-                        <x-bladewind::modal show_action_buttons="false" type="warning" title="Confirm delete user."
+                        <x-bladewind::modal show_action_buttons="false" type="warning" title="Confirm delete user." size="large"
                             name="delete-user-{{$user->id}}" blur_size="none">
                             <p>{{ $user->name }} will be permanently deleted in the database.</p>
                             <div class="flex justify-end gap-2 mt-4">
@@ -85,6 +84,8 @@
                                     wire:click="deleteUser({{$user->id}})">Delete</x-bladewind::button>
                             </div>
                         </x-bladewind::modal>
+                        @include('livewire.edit-user', ['user_id' => $user->id])
+
             @endforeach
         </x-bladewind::table>
         @if (!count($users))
@@ -93,7 +94,6 @@
             </div>
         @endif
     </div>
-
     <div>
         {{ $users->onEachSide(1)->links() }}
         <div class="flex items-center gap-2 text-sm">
